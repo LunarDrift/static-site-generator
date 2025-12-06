@@ -1,5 +1,5 @@
 import unittest
-from markdown_functions import (
+from inlinemarkdown_functions import (
     split_nodes_delimiter,
     split_nodes_image,
     split_nodes_link,
@@ -10,7 +10,7 @@ from markdown_functions import (
 from textnode import TextNode, TextType
 
 
-class TestMarkdownFunctions(unittest.TestCase):
+class TestInlineMarkdownFunctions(unittest.TestCase):
     # ----- Split Nodes Tests -----
     def test_split_bold(self):
         old_nodes = [TextNode("This is **bold** text", TextType.BOLD)]
@@ -157,6 +157,8 @@ class TestMarkdownFunctions(unittest.TestCase):
         nodes = text_to_textnodes(text)
         expected_nodes = [TextNode("Hello, World! @#&*()", TextType.TEXT)]
         self.assertEqual(nodes, expected_nodes)
+
+
 
 if __name__ == "__main__":
     unittest.main()
